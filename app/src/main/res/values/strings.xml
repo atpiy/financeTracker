@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">FinanceTracker</string>
+
+    <string name="ok">OK</string>
+    <string name="dialog_message">Turn on the Internet and Try</string>
+    <string name="dialog_title">Check your Internet</string>
+
+    <string name="dialog_select_prompt">Choose a picture</string>
+    <string name="dialog_select_camera">Camera</string>
+    <string name="dialog_select_gallery">Gallery</string>
+
+    <string name="crossed_threshold_title">Warning!</string>
+    <string name="crossed_threshold_msg">You expenditure crossed the threshold limit</string>
+</resources>

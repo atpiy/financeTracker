@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.financetracker.ashok.financetracker.MainActivity">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finance Tracker"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <ScrollView
+        android:id="@+id/myscroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/heading"
+        android:layout_above="@+id/lowerll">
+
+        <LinearLayout
+            android:id="@+id/topll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heading"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:background="@drawable/imageview" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/click"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonborders"
+                    android:backgroundTint="@color/colorForButton"
+                    android:text="Click"
+                    android:textColor="@color/colorForText" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/analyze"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonborders"
+                    android:backgroundTint="@color/colorForButton"
+                    android:text="Analyze"
+                    android:textColor="@color/colorForText" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/place"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="#7C7C7C"
+                    android:ellipsize="start"
+                    android:ems="20"
+                    android:gravity="center_horizontal"
+                    android:hint="Place"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorForText"
+                    android:textColorHint="@color/colorForText" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp" />
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="#7C7C7C"
+                    android:ellipsize="start"
+                    android:ems="20"
+                    android:gravity="center_horizontal"
+                    android:hint="Amount"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorForText"
+                    android:textColorHint="@color/colorForText" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp" />
+
+                <EditText
+                    android:id="@+id/dttime"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="#7C7C7C"
+                    android:ellipsize="start"
+                    android:ems="20"
+                    android:gravity="center_horizontal"
+                    android:hint="Date"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorForText"
+                    android:textColorHint="@color/colorForText" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/lowerll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorForButton"
+            android:textColor="@color/colorForText"
+            android:text="Save"
+            android:background="@drawable/buttonborders"/>
+
+        <Space
+            android:layout_height="wrap_content"
+            android:layout_width="10dp"/>
+
+        <Button
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorForButton"
+            android:textColor="@color/colorForText"
+            android:text="View"
+            android:background="@drawable/buttonborders"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
