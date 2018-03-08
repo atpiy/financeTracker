@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
     public static final int CAMERA_IMAGE_REQUEST = 3;
 
     ImageView imageView;
-    String carnumber = "";
+    String placestr = "";
     String amountstr = "";
     String purdatestr = "";
     TextView carname;
@@ -292,7 +292,7 @@ public class MainActivity extends Activity {
             try {
                 String data = URLEncoder.encode("image", "UTF-8") + "=" + URLEncoder.encode(img, "UTF-8");
 
-                URL url = new URL("http://192.168.43.8:3000/process");
+                URL url = new URL("http://192.168.43.6:3000/process");
                 URLConnection conn = url.openConnection();
                 conn.setDoOutput(true);
                 OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
@@ -322,7 +322,9 @@ public class MainActivity extends Activity {
             if ((!jsonstr.isEmpty())) {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonstr);
-                    carnumber = jsonObj.getString("carNumber");
+                    placestr = jsonObj.getString("place");
+                    amountstr = jsonObj.getString("amount");
+                    //purdatestr = jsonObj.getString("final_date");
 
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -349,14 +351,11 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            if(carnumber.isEmpty() || amountstr.isEmpty() || purdatestr.isEmpty())
+            if(placestr.isEmpty() || amountstr.isEmpty() || purdatestr.isEmpty())
                 Toast.makeText(getApplicationContext(), "Unable to process.", Toast.LENGTH_LONG).show();
             else {
-                carname.setText(carnumber,  TextView.BufferType.EDITABLE);
+                carname.setText(placestr,  TextView.BufferType.EDITABLE);
                 amount.setText(amountstr,  TextView.BufferType.EDITABLE);
-
-                Date date = new Date();
-                purdatestr = date.toString();
                 purchaseDate.setText(purdatestr,  TextView.BufferType.EDITABLE);
             }
             dialog.dismiss();
@@ -388,7 +387,7 @@ public class MainActivity extends Activity {
             String two = amount.getText().toString();
             String three = purchaseDate.getText().toString();
 
-            String url = "http://192.168.43.10:3000/insertData?place="+one+"&cost="+two+"&dt="+three;
+            String url = "http://192.168.43.6:3000/insertData?place="+one+"&cost="+two+"&dt="+three;
             Log.e(TAG, "Request sent: " + url);
             String jsonStr = sh.makeServiceCall(url);
 

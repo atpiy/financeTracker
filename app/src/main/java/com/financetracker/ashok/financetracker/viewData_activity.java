@@ -77,7 +77,7 @@ public class viewData_activity extends Activity {
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
 
-            String url = "http://192.168.43.10:3000/retrieveData";
+            String url = "http://192.168.43.6:3000/retrieveData";
             String jsonStr = sh.makeServiceCall(url);
 
             Log.e(TAG, "Response from url: " + jsonStr);
